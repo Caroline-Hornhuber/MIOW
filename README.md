@@ -1,4 +1,11 @@
+WICHTIG: DIESES PROJEKT IST IN COLLABORATION MIT LEJLA MUSIC ENTSTANDEN!!!!!(im sinne eines syp projektes der 3ten klasse)
+
+
 # <img src="pflichtenheft/Headers/1Pflichtenheft.png" style="width: 100%;">
+
+
+
+
 
 ## Inhaltsverzeichnis
 - [Pflichtenheft MIOW](#img-srcpflichtenheftheaders1pflichtenheftpng-stylewidth-100)
