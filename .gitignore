@@ -1,0 +1,4 @@
+node_modules/
+backend/test_data/.env
+.idea
+.env

@@ -1,0 +1,13 @@
+###
+PUT http://localhost:3000/settings
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiam9obiJ9LCJleHAiOjE3MTkxNzAyMTguNjQ3LCJpYXQiOjE3MTkxNjY2MTh9.CUl91OaWXxYkUlq0uHPBBh6TC_eYWyqjPYgGnVXDp1I
+
+{
+  "themeNR": 2,
+  "trackPeriod": true
+}
+
+###
+GET http://localhost:3000/settings
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiam9obiJ9LCJleHAiOjE3MTkxNzAyMTguNjQ3LCJpYXQiOjE3MTkxNjY2MTh9.CUl91OaWXxYkUlq0uHPBBh6TC_eYWyqjPYgGnVXDp1I

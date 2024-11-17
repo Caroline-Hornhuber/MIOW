@@ -1,0 +1,680 @@
+$primary_color: #ffb9c2;
+$inner_color: #FFF6F6;
+$input_color: rgb(255, 255, 255);
+$input_color_two: rgba(255, 185, 185, 0.27);
+$font_color: #603636;
+$main_font: 'Roboto', sans-serif;
+$circle-size: 80px;
+$font_size: 2.5em;
+$background_color: #CDFCFF;
+$daily_tag: #FF7373;
+$weekly_tag: #FF9696;
+$monthly_tag: #ffffff;
+$yearly_tag: #FFCBCB;
+$predicting_tag: #FFE4E4;
+$settings_tag: #FFF1F1;
+
+
+
+:root {
+    --primary-color: #ffb9c2;
+    --inner-color: #FFF6F6;
+    --input-color: rgb(255, 255, 255);
+    --input-color-two: rgba(255, 185, 185, 0.27);
+    --font-color: #603636;
+    --background-color: #CDFCFF;
+    --daily-tag: #FF7373;
+    --weekly-tag: #FF9696;
+    --monthly-tag: #ffe5e5;
+    --yearly-tag: #FFCBCB;
+    --predicting-tag: #FFE4E4;
+    --settings-tag: #FFF1F1;
+    --circle-size: 80px;
+    --font-size: 2.5em;
+    --main-font: 'Roboto', sans-serif;
+    --accent-color: #ff78a1;
+    --accent-color-2: #ebedf0;
+}
+
+body{
+    background-color: var(--background-color);
+}
+button{
+    border: none;
+    background-color: inherit;
+}
+
+button:hover{
+    transform: scale(1.03);
+}
+
+.tags{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    position: absolute;
+    z-index: 0;
+    color: rgba(255, 255, 255, 0);
+    background-color: inherit;
+    appearance: none;
+
+    img{
+        height: 87px;
+        cursor: pointer;
+    }
+    button{
+        margin: 54px 0 0 0;
+        background-color: inherit;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    #daily-tag{
+        filter: invert(62%) sepia(45%) saturate(4630%) hue-rotate(321deg) brightness(116%) contrast(102%);
+    }
+    #weekly-tag {
+        filter: invert(87%) sepia(30%) saturate(1205%) hue-rotate(296deg) brightness(88%) contrast(137%);
+    }
+    #monthly-tag {
+        filter: invert(87%) sepia(99%) saturate(3038%) hue-rotate(290deg) brightness(103%) contrast(105%);
+    }
+    #settings-tag {
+        filter: invert(97%) sepia(85%) saturate(1151%) hue-rotate(290deg) brightness(121%) contrast(106%);
+    }
+}
+
+.note-book{
+    font-family: $main_font;
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--primary-color);
+    color : var(--font-color);
+
+
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+
+    .daily-entry{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        font-size: $font_size;
+        background-color: var(--input-color);
+        border-radius: 15px;
+        margin: 30px 0;
+
+
+        box-shadow:  0 6px 20px 0 rgba(0, 0, 0, 0.09);
+
+        textarea{
+            width: 100%;
+            height: 150px;
+            border: none;
+            background-color:  var(--input-color);
+            font-size: 23px;
+            font-family: $main_font;
+            resize: none;
+            outline: none;
+            color: var(--font-color);
+            border-radius: 15px;
+
+        }
+    }
+
+    .inner-notebook
+    {
+        z-index: 1;
+        min-height: inherit;
+        height: 97%;
+        position: relative;
+        background-color: var(--inner-color);
+        padding: 10px;
+        border-radius: 20px;
+        box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    #daily-notebook{
+
+        .left-site
+        {
+            width: 50%;
+            height: 100%;
+            float: left;
+            padding: 10px 10px 10px 40px;
+            box-sizing: border-box;
+
+            .mood{
+                display: flex;
+                align-items: center;
+                padding: 20px;
+                font-size: $font_size;
+                background-color:  var(--input-color);
+                border-radius: 15px;
+                margin: 30px 0;
+                box-shadow:  0 6px 20px 0 rgba(0, 0, 0, 0.09);
+                p{
+                    margin: 10px 0;
+
+                }
+                span{
+
+                    margin-left: 10px;
+
+
+                }
+
+                .mood_button{
+                    width: $circle-size;
+                    height: $circle-size;
+                    border-radius: 50%;
+                    margin: 0 auto;
+                    position: relative;
+                    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+
+                }
+
+
+                #very-good{
+
+                    background-color: #22ec22;
+                    border-radius: 50%;
+                    display: inline-block;
+                }
+
+                #good{
+                    background-color: #a3ff95;
+                    border-radius: 50%;
+                    display: inline-block;
+                }
+
+                #meh{
+                    background-color: #ffda0c;
+                    border-radius: 50%;
+                    display: inline-block;
+                }
+
+                #bad{
+                    background-color: #ffa056;
+                    border-radius: 50%;
+                    display: inline-block;
+                }
+
+                #very-bad{
+                    background-color: #ff4d4d;
+                    border-radius: 50%;
+                    display: inline-block;
+                }
+            }
+
+            .period{
+
+                box-shadow:  0 6px 20px 0 rgba(0, 0, 0, 0.09);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px;
+                font-size: $font_size;
+                background-color:  var(--input-color);
+                border-radius: 15px;
+                margin: 30px 0;
+
+                #predicting{
+                    color: #ffacac;
+                    font-size: 0.8em;
+                }
+                p{
+                    margin: 10px 0;
+                }
+                span{
+                    margin-left: 10px;
+
+                }
+                img{
+                    align-self: center;
+                    justify-self: right;
+
+                    width: 75px;
+                    margin-left: 10px;
+
+                    display: inline-block;
+
+                }
+
+            }
+
+            .emotions{
+                display: flex;
+                flex-wrap: wrap;
+                padding: 20px;
+                font-size: $font_size;
+                background-color:  var(--inner-color);
+                border-radius: 15px;
+                margin: 30px 0;
+                align-items: center;
+
+                box-shadow:  0 6px 20px 0 rgba(0, 0, 0, 0.1);
+            }
+
+        }
+
+        .right-side
+        {
+            width: 50%;
+            height: 100%;
+            float: right;
+            padding: 10px;
+            box-sizing: border-box;
+
+            .weather{
+                display: flex;
+                flex-wrap: wrap;
+                padding: 20px;
+                font-size: $font_size;
+                background-color:  var(--input-color);
+                border-radius: 15px;
+                margin: 30px 0;
+                align-items: center;
+
+                box-shadow:  0 6px 20px 0 rgba(0, 0, 0, 0.09);
+            }
+
+            .sleep{
+                display: flex;
+                flex-wrap: wrap;
+                padding: 20px;
+                font-size: $font_size;
+                background-color:  var(--input-color);
+                border-radius: 15px;
+                margin: 30px 0;
+                align-items: center;
+
+                box-shadow:  0 6px 20px 0 rgba(0, 0, 0, 0.09);
+            }
+
+            .water{
+                display: flex;
+                flex-wrap: wrap;
+                padding: 20px;
+                font-size: $font_size;
+                background-color: var(--input-color);
+                border-radius: 15px;
+                margin: 30px 0;
+                align-items: center;
+
+                box-shadow:  0 6px 20px 0 rgba(0, 0, 0, 0.09);
+            }
+
+            .selfcare{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px;
+                font-size: $font_size;
+                background-color: var(--input-color);
+                border-radius: 15px;
+                margin: 30px 0;
+
+                box-shadow:  0 6px 20px 0 rgba(0, 0, 0, 0.09);
+            }
+
+            .daily-entry{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px;
+                font-size: $font_size;
+                background-color: var(--input-color);
+                border-radius: 15px;
+                margin: 30px 0;
+
+
+                box-shadow:  0 6px 20px 0 rgba(0, 0, 0, 0.09);
+
+
+            }
+        }
+        .emotion_button {
+            width: 80px;
+            height: 80px;
+            border-radius: 50px;
+            border: none;
+            margin-left: 15px;
+            margin-bottom: 10px;
+            display: inline-block;
+            text-align: center;
+            line-height: 50px;
+            background-color: $weekly_tag ;
+            font-size: 20px;
+            font-color: var(--font-color);
+
+            img{
+                width: 80px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .weather_button {
+            width: 80px;
+            height: 80px;
+            border-radius: 50px;
+            border: none;
+            margin-left: 15px;
+            margin-bottom: 10px;
+            display: inline-block;
+            text-align: center;
+            line-height: 50px;
+            background-color: $monthly_tag ;
+            font-size: 20px;
+            font-color: var(--font-color);
+
+            img{
+                width: 80px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .emotion_button:not(.selected),
+        .weather_button:not(.selected){
+            filter: brightness(130%);
+        }
+
+        .mood_button:not(.selected){
+            filter: brightness(150%);
+        }
+
+        .emotion_button.selected,
+        .weather_button.selected,
+        .mood_button.selected{
+            filter: brightness(100%);
+            box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .period-button-selected{
+            filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.45));
+        }
+
+    }
+
+
+    #monthly-notebook {
+        $white: #fff;
+        $main: #eaedf0;
+        $accent: #603636;
+        $accent-2: #ebedf0;
+
+        body {
+            background-color: var(--input-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .container {
+            display: inline-block;
+            border-radius: 35px;
+            padding: 0 1em;
+            width: 70%;
+            margin: 20px 0 0 13%;
+            transform: scale(1.1);
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .header-display {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-display p {
+            color: var(--font-color);
+            margin: 5px;
+            font-size: 20px;
+            word-spacing: 0.5rem;
+        }
+
+        pre {
+            padding: 10px;
+            margin: 0;
+            cursor: pointer;
+            font-size:15px;
+            color: var(--font-color);
+        }
+
+        .days,
+        .week {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            margin: auto;
+            padding: 0 0px;
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .week div,
+        .days div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 5rem;
+            width: 5rem;
+            border-radius: 15px;
+            margin: 0 0 0 3px;
+        }
+
+        .days div:hover {
+            background: var(--accent-color-2);
+            color: var(--font-color);
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .current-date {
+            background-color: var(--accent-color);
+            color: var(--input-color);
+        }
+        .display-selected {
+            margin-bottom: 10px;
+            padding: 20px 20px;
+            text-align: center;
+        }
+        .other-month {
+            color: #d7d7d7;
+        }
+
+        .mood-1 {
+            background-color: rgba(255, 24, 24, 0.5);
+        }
+
+        .mood-2 {
+            background-color: rgba(255, 135, 19, 0.5);
+        }
+
+        .mood-3 {
+            background-color: rgba(255, 255, 39, 0.5);
+        }
+
+        .mood-4 {
+            background-color: rgba(139, 255, 23, 0.5);
+        }
+
+        .mood-5 {
+            background-color: #1fff1f;
+        }
+
+        .period-1 { // on period
+            border: 5px solid #ff0000;
+        }
+
+        .period-2 { // not on period
+            border: 5px solid rgba(87, 87, 87, 0.26);
+        }
+
+        .period-3 { // predicted period
+            border: 5px solid #ffb9b9;
+        }
+    }
+
+
+
+    .week_weekly-goals {
+        margin-top: 20px;
+
+        border-radius: 15px;
+    }
+    .week_weekly-goals h2 {
+        font-size: 20px;
+        color: #ff6b6b;
+    }
+
+    .week_day-log {
+        margin-top: 20px;
+    }
+    .week_day {
+        background-color: #ffd4d4;
+        border-radius: 15px;
+        box-shadow:  0 6px 20px 0 rgba(0, 0, 0, 0.09);
+        margin: 20px 0 20px 0;
+    }
+    .week_date {
+        font-size: 20px;
+        color: #fff;
+        padding:10px 10px 0 10px;
+    }
+    .week_task-list {
+        margin-top: 5px;
+        background-color: #fff;
+        width: 100%;
+        border-radius: 0 0 15px 15px;
+        height: 90px;
+    }
+    .week_task-list p {
+        margin: 0;
+        padding: 5px;
+    }
+    #weekly-notebook{
+
+    }
+
+    #settings-notebook{
+
+        textarea{
+            width: 100%;
+            height: 150px;
+            border: none;
+            background-color:  var(--input-color);
+            font-size: 23px;
+            font-family: $main_font;
+            resize: none;
+            outline: none;
+            color: var(--font-color);
+            border-radius: 15px;
+
+        }
+
+        .options{
+            display:flex;
+            flex-direction: column;
+            justify-content:space-between;
+            float: left;
+        }
+
+        .options button{
+            padding: 35px;
+            font-size: 20px;
+            color: #603636;
+        }
+
+        .content{
+            padding: 20px;
+            margin-left: 250px;
+        }
+
+        .opt-button:hover{
+            background-color: #ffd6d6;
+            color: #603636;
+        }
+
+        .theme{
+            width: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            font-size: $font_size;
+            background-color: var(--input-color);
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow:  0 6px 20px 0 rgba(0, 0, 0, 0.09);
+        }
+
+        .Matcha {
+
+        }
+
+        .Bubblegum {
+
+        }
+
+        .CottonCandy{
+
+        }
+
+        .Dragona{
+
+        }
+
+        .Dragonfruit{
+
+        }
+
+        .Gatorade{
+
+        }
+
+        .Lavafoodcake{
+
+        }
+
+        .Peachpunch{
+
+        }
+
+
+        .vl {
+            border-left: 2px solid rgba(211, 169, 139, 0.38);
+            height: 95%;
+            position: absolute;
+            left: 15%;
+            top: 20px;
+        }
+
+    }
+
+    .vl {
+        border-left: 2px solid rgba(211, 169, 139, 0.38);
+        height: 100%;
+        position: absolute;
+        left: 50%;
+    }
+}

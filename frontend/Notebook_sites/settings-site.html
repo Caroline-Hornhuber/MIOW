@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Settings View</title>
+
+    <script type="text/javascript" src="../src/home.js"></script>
+    <link rel="stylesheet" href="../styles/home.css">
+</head>
+<body>
+
+<div class="tags">
+    <button>
+        <a href="../home.html"> <img id="daily-tag" src="../images/tag.png" alt=""></a>
+    </button>
+    <button>
+        <a href="../Notebook_sites/weekly-site.html"> <img id="weekly-tag" src="../images/tag.png" alt=""></a>
+    </button>
+    <button>
+        <a href="../Notebook_sites/monthly-site.html"> <img id="monthly-tag" src="../images/tag.png" alt=""></a>
+    </button>
+    <button>
+        <a href="../Notebook_sites/settings-site.html"> <img  id="settings-tag" src="../images/tag.png" alt=""></a>
+    </button>
+</div>
+<div class="note-book">
+    <div class="inner-notebook">
+            <h1 style="padding: 10px 10px 10px 40px;">Settings</h1>
+            <div id="settings-notebook">
+                <div class="options">
+                    <button class="opt-button" id="account-settings">Account Settings</button>
+                    <button class="opt-button" id="appearance">Appearance</button>
+                    <button class="opt-button" id="about-us">About us</button>
+                    <button class="opt-button" onclick="logout()" id="logout-btn">Logout</button>
+                    <button style="color:darkred" class="opt-button" id="deleteAccount" onclick="deleteAccount()">Delete Account</button>
+                </div>
+                <div class="vl">
+                </div>
+                <div class="content">
+                    <div id="account-settings-content">
+                        <form id="settingsForm">
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" name="username" required><br><br>
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" required><br><br>
+
+                            <input type="checkbox" id="trackPeriod">
+                            <label for="trackPeriod">Track Periods</label>
+                            <br><br>
+
+                            <input type="submit" id="submit_settings" value="Submit Settings">
+                        </form>
+                    </div>
+                    <div id="appearance-content">
+                        <h1>Themes</h1>
+                        <button class="theme-button" id="Matcha"><img src="../images/themes/matchapng.png" alt="Matcha" class="theme"></button>
+                        <button class="theme-button" id="Bubblegum"><img src="../images/themes/bubblegum.png" alt="Bubblegum" class="theme"></button>
+                        <button class="theme-button" id="CottonCandy"><img src="../images/themes/cottoncandy.png" alt="CottonCandy" class="theme"></button>
+                        <button class="theme-button" id="Dragona"><img src="../images/themes/dragona.png" alt="Dragona" class="theme"></button>
+                        <button class="theme-button" id="Dragonfruit"><img src="../images/themes/dragonfruit.png" alt="Dragonfruit" class="theme"></button>
+                        <button class="theme-button" id="Gatorade"><img src="../images/themes/gatorade.png" alt="Gatorade" class="theme"></button>
+                        <button class="theme-button" id="Lavafoodcake"><img src="../images/themes/lavafoodcake.png" alt="Lavafoodcake" class="theme"></button>
+                        <button class="theme-button" id="Peachpunch"><img src="../images/themes/peachpunch.png" alt="Peachpunch" class="theme"></button>
+
+                    </div>
+                    <div id="about-us-content">
+                        <h1>About us</h1>
+                        <h3>Lela</h3>
+                        <p>Something something artist and creative</p>
+
+                        <h3>Lina</h3>
+                        <p>Something something programmer and creative</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const track = document.getElementById('trackPeriod');
+        const currentTrack = localStorage.getItem('trackPeriod');
+
+        if (currentTrack=="true") {
+            track.checked = true;
+        }
+
+        const form = document.getElementById('settingsForm');
+        form.addEventListener('submit', (event) => {
+            console.log('Form submit event triggered');
+            event.preventDefault();
+            submitSettings();
+        });
+    });
+
+</script>
+
+<script type="text/javascript" src="../src/themes.js"></script>
+</body>
+</html>
